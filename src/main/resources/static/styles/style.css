@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Notelia';
+    src: url("../fonts/Notelia.ttf");
+}
+@font-face {
+    font-family: 'RosetaDisplay';
+    src: url("../fonts/RosetaDisplay.ttf");
+}
+
+@font-face {
+    font-family: 'beermoney';
+    src: url("../fonts/beermoney.ttf");
+}
+
+@font-face {
+    font-family: 'Ustroke-Regular';
+    src: url("../fonts/Ustroke-Regular.ttf");
+}
+
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+
+}
+
+.container {
+    max-width: 1400px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+
+a:hover {
+    color: lightgray;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.header {
+    height: 80px;
+    max-width: 1200px;
+    color: white;
+}
+.header .container {
+    height: 80px;
+    line-height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.films {
+    box-sizing: border-box;
+    height: 80px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    color: aqua;
+    font-family: Ustroke-Regular;
+    text-decoration: none;
+}
+
+.films:hover {
+    color: #ff8c00;
+    transform: scale(1.0);
+    font-size: 21px;
+}
+
+.category img {
+    width: 60px;
+    height: 60px;
+    padding-left: 100px;
+    padding-top: 15px;
+}
+.sign {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.yellow {
+    box-sizing: border-box;
+    height: 80px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    color: aqua;
+    font-family: Ustroke-Regular;
+    text-decoration: none;
+}
+
+.yellow:hover {
+    color: #ff8c00;
+    transform: scale(1.0);
+    font-size: 21px;
+}
+
+
+
+
+
+.main-content {
+    height: 600px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.main-content .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/*.outer-box {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    max-width: 600px;
+    max-height: 500px;
+    margin-top: 150px;
+}
+
+.inner-box-one {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 100%;
+    font-size: 180px;
+    letter-spacing: 25px;
+    color: #ff8c00;
+    border: 3px solid white;
+    border-radius: 3px;
+
+}
+
+
+.inner-box-two {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 45px;
+    color: white;
+    letter-spacing: 120px;
+    padding-left: 100px;
+}*/
+
+.outer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+}
+.inner-box-one {
+    box-sizing: border-box;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 30px;
+    width: 90%;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 3px;
+}
+
+.inner-box-one h1 {
+    font-size: 180px;
+    letter-spacing: 25px;
+    color: #ff8c00;
+}
+
+.inner-box-one h3 {
+    font-size: 120px;
+    letter-spacing: 25px;
+    color: #ff8c00;
+}
+
+.inner-box-two {
+    margin-top: 30px;
+    font-size: 40px;
+    color: white;
+    letter-spacing: 140px;
+    margin-left: 130px;
+}
+
+.description {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    margin-top: 120px;
+}
+.text {
+    font-family: Arial;
+    line-height: 1.3;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 7px;
+    color: white;
+}
+
+.text .k {
+    color: #ff8c00;
+    font-family: notelia;
+    font-size: 35px;
+    font-weight: bold;
+    opacity: 0.9;
+    font-family: beermoney;
+}
+
+
+
+
+.genres {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.genres .container {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+
+.genre-carousel {
+    display: flex;
+    white-space: nowrap;
+}
+.genre-title {
+    box-sizing: border-box;
+    width: 50%;
+    margin-left: 30px;
+    position: relative;
+    padding-top: 30px;
+}
+
+.genre {
+    position: absolute;
+    font-family: Ustroke-Regular;
+    font-size: 35px;
+    letter-spacing: 9px;
+    font-weight: normal;
+}
+
+.genre-item {
+    flex: 0 0 auto;
+    padding: 30px;
+    margin: 30px;
+    border: 1px solid #ff8c00;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    font-size: 40px;
+    letter-spacing: 7px;
+    font-family: beermoney;
+    text-decoration: none;
+    color: white;
+}
+
+.genre-carousel a:hover {
+    transform: scale(1.3);
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+.thrillers .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    padding-top: 40px;
+}
+
+.thriller {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.thriller a:hover {
+    transform: scale(1.1);
+}
+.film {
+    position: relative;
+    cursor: pointer;
+}
+.rating {
+    box-sizing: border-box;
+    background-color: black;
+    opacity: 0.7;
+    position: absolute;
+    font-size: 25px;
+    padding: 7px;
+}
+
+
+
+body.special-page {
+    /*background-image: url("images/бойцовский_клуб_фон.jpg");*/
+    background-image: url("/static/images/бойцовский_клуб_фон.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 70% 35%;
+    backdrop-filter: blur(3px);
+    box-shadow: inset 0 0 100px 100px black;
+}
+
+.about-film {
+    padding: 120px;
+}
+
+.about-film .container {
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.film-photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.add {
+    margin-top: 40px;
+    background-color: rgba(128, 128, 128, 0.2);
+    border: 0px;
+    color: rgba(255, 255, 255, 0.8);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+    margin-left: 15px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: Notelia;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.add:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    transform: scale(1.1);
+    font-size: 19px;
+}
+
+.film-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.film-title {
+    margin-left: 20px;
+    margin-bottom: 0px;
+    margin-top: 130px;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.table {
+    border-spacing: 20px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.grey {
+    font-size: 20px;
+    color: grey;
+}
+
+.white {
+    font-size: 20px;
+    color: white;
+    opacity: 0.8;
+}
+
+.films-rates {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.films-rate {
+    font-size: 90px;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-top: 100px;
+}
+
+.to-rate {
+    margin-top: 20px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 0px;
+    color:  rgba(255, 255, 255, 0.8);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: Notelia;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.to-rate:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    transform: scale(1.1);
+    font-size: 19px;
+}
+
+a.comments {
+    text-decoration: none;
+    color: aqua;
+}
+
+.comments {
+    margin-top: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.comments:hover {
+    transform: scale(1.0);
+    color:  #ff8c00;
+    font-size: 21px;
+}
+
+.film-description {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    margin: 0;
+    background: linear-gradient(to top, #242424, black);
+    transition: background 0.5s ease;
+}
+
+.film-description .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.title-description {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-family: Notelia;
+    margin-bottom: 50px;
+    color: white;
+    opacity: 0.8;
+}
+
+.text-description {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 25px;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+
+
+
+

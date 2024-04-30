@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>KinoRate</title>
+    <link rel="icon" type="image/png" th:href="@{../images/icon.png}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{../css/style.css}">
+    <!--  Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Work+Sans:wght@300;500;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+            <span class="category">
+                <img src="images/logo.png" alt="logo">
+                <a class="films" th:href="@{/}">фильмы</a>
+                <a class="films" th:href="@{/favourites}">избранное</a>
+            </span>
+        <span class="sign">
+                <a class="yellow" th:href="@{/login}">войти</a>
+                <a class="yellow" th:href="@{/register}">регистрация</a>
+            </span>
+    </div>
+</header>
+
+
+<div class="error" th:if="${param.logout}">
+    You have been logged out.
+</div>
+
+<section class="section section--login">
+    <div class="login_header">
+        <h2 class="section_title_login">Registration</h2>
+        <h3 class="section_suptitle_login">Enter your info</h3>
+    </div>
+
+    <form th:action="@{/register}" th:object="${user}" th:method="post">
+        <div class="login_page">
+            <div class="login_item" >
+                <div class="login_title">
+                    <div>
+                        <div class="error" style="color: red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+                        <text class="login_text">Username</text>
+                        <input class="login_form" type="text" autocomplete="off" name="username">
+                    </div>
+
+                    <div>
+                        <div class="error" style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                        <text class="login_text">Password</text>
+                        <input class="login_form" type="password" autocomplete="off" name="password">
+                    </div>
+                </div>
+
+                <div>
+                    <input class="btn" type="submit" value="Sign up"/>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+</body>
+</html>

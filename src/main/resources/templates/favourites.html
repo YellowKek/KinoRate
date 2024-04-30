@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>KinoRate</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+            <span class="category">
+                <img src="images/logo.png" alt="logo">
+                <a class="films" th:href="@{/}">фильмы</a>
+                <a class="films" th:href="@{/favourites}">избранное</a>
+            </span>
+        <span class="sign">
+                <a class="yellow" th:href="@{/login}">войти</a>
+                <a class="yellow" th:href="@{/register}">регистрация</a>
+            </span>
+    </div>
+</header>
+
+<section class="main-content">
+    <div class="container">
+        <div class="outer-box">
+            <div class="inner-box-one">
+                <h3>Избранное</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="thrillers">
+    <div class="container">
+        <div class="thriller" th:each="movie : ${movies}">
+            <a th:href="@{/{id}(id=${movie.id})}" class="film">
+                <img th:src="${movie.posterPath}" alt="Постер">
+            </a>
+            <span class="rating" th:text="${movie.rating}"></span>
+        </div>
+    </div>
+</section>
+</body>
+</html>

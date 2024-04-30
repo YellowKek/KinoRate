@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thrillers</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+            <span class="category">
+                <img src="images/logo.png" alt="logo">
+                <a class="films">фильмы</a>
+                <a class="films">жанры</a>
+            </span>
+        <span class="sign">
+                <a class="films">избранное</a>
+                <a class="yellow">войти</a>
+            </span>
+
+    </div>
+</header>
+<section class="thrillers">
+    <div class="container">
+        <div class="thriller" th:each="thriller : ${thrillers}">
+            <a th:href="@{/{id}(id=${thriller.id})}" class="film">
+                <img th:src="${thriller.posterPath}" alt="Постер">
+            </a>
+            <span class="rating" th:text="${thriller.rating}"></span>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

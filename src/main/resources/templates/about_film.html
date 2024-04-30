@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${movie.name}"></title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body class="special-page">
+<header class="header">
+    <div class="container">
+            <span class="category">
+                <img src="/images/logo.png" alt="logo">
+                <a class="films" th:href="@{/}">фильмы</a>
+                <a class="films" th:href="@{/favourites}">избранное</a>
+            </span>
+        <span class="sign">
+                <a class="yellow" th:href="@{/login}">войти</a>
+                <a class="yellow" th:href="@{/register}">регистрация</a>
+            </span>
+    </div>
+</header>
+
+<section class="about-film">
+    <div class="container">
+        <div class="film-photo">
+            <img th:src="${movie.posterPath}" alt="Постер">
+
+            <form th:if="${not in_fav}" th:action="@{/favourites/{id}(id=${movie.getId()})}" th:method="patch"
+                  th:object="${movie}">
+                <button type="submit" class="add">Добавить в избранное</button>
+            </form>
+
+            <form th:if="${in_fav}" th:action="@{/favourites/{id}(id=${movie.getId()})}" th:method="delete"
+                  th:object="${movie}">
+                <button type="submit" class="add">Удалить из избранного</button>
+            </form>
+
+        </div>
+        <div class="film-info">
+            <h1 class="film-title" th:text="${movie.name}"></h1>
+            <table class="table">
+                <tr>
+                    <td class="grey">Год производства</td>
+                    <td class="white" th:text="${movie.yearOfCreation}"></td>
+                </tr>
+                <tr>
+                    <td class="grey">Жанры</td>
+                    <td class="white" th:each="genre : ${movie.genres}" th:text="${genre}"></td>
+                </tr>
+                <tr>
+                    <td class="grey">Возраст</td>
+                    <td class="white" th:text="${movie.ageRating} + '+'"></td>
+                </tr>
+                <tr>
+                    <td class="grey">Длительность</td>
+                    <td class="white" th:text="${movie.duration} + ' ' + 'мин.'"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="films-rates">
+            <span class="films-rate" th:text="${movie.rating}"></span>
+            <form th:action="@{/review/getForm/{movie_id}(movie_id=${movie.getId()})}" th:method="get">
+                <button class="to-rate">Оценить фильм</button>
+            </form>
+            <a th:href="@{/review/{movie_id}(movie_id=${movie.getId()})}" class="comments">Рецензии</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="film-description">
+    <div class="container">
+        <h1 class="title-description">Описание фильма</h1>
+        <p class="text-description" th:text="${movie.annotation}"></p>
+    </div>
+</section>
+
+
+</body>
+</html>
