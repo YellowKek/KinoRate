@@ -37,6 +37,7 @@ public class ReviewController {
             review.setUser(user.get());
             reviewService.save(review);
         }
+
         return "redirect:{movie_id}";
     }
 
